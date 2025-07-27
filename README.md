@@ -14,4 +14,4 @@ A lightweight Chrome Extension that auto-fills saved Wi-Fi login credentials on 
 - Enter your Wi-Fi **username** and **password**.
 - Click **Save**.
 
-The extension will now auto-fill credentials Hostel wifi login page
+The extension will now auto-fills credentials on Hostel wifi login page.
