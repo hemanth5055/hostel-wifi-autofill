@@ -1,0 +1,20 @@
+{
+  "name": "Wifi Credentials Auto-fill",
+  "description": "Auto-fill saved Wi-Fi credentials on websites.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "32": "fav.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://hfw.vitap.ac.in:8090/httpclient.html"],
+  "content_scripts": [
+    {
+      "matches": ["https://hfw.vitap.ac.in:8090/httpclient.html"],
+      "js": ["content.js"]
+    }
+  ]
+}
