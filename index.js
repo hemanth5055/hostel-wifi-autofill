@@ -136,6 +136,6 @@ async function handleLogout(username) {
     return false;
   } catch (error) {
     console.error("Logout Error:", error);
-    return fasle;
+    return false;
   }
 }
