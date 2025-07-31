@@ -89,6 +89,7 @@ button:hover {
   padding: 0.6rem;
   border: none;
   background-color: #e5e7eb;
+  color: #767676;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
@@ -99,12 +100,22 @@ button:hover {
   background-color: #3b82f6;
   color: white;
 }
+.tab-button:hover {
+  background-color: #3b82f6;
+  color: white;
+}
 
 .tab-content {
   display: flex;
   flex-direction: column;
 }
 
+#loginBtn {
+  background-color: rgb(101, 171, 101);
+}
+#logoutBtn {
+  background-color: rgb(171, 101, 101);
+}
 .hidden {
   display: none;
 }
@@ -122,5 +133,6 @@ button:hover {
 }
 .message {
   font-size: 18px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

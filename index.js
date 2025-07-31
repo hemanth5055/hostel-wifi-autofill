@@ -43,6 +43,13 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const message = document.getElementById("message");
+  chrome.storage.session.get(["lastStatus"], (data) => {
+    if (!data || !data.lastStatus) {
+      message.innerText = "Click on Login button to connect.";
+    } else {
+      message.innerText = `Status : ${data.lastStatus}`;
+    }
+  });
 
   // Login
   document.getElementById("loginBtn").addEventListener("click", async () => {
@@ -50,7 +57,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
     const result = await handleLogin(username, password);
     if (result) {
-      message.innerText = " Authenticated Successfully ✅";
+      const ms = "Authenticated ✅";
+      message.innerText = `Status : ${ms}`;
+      chrome.storage.session.set({ lastStatus: ms }, () => {
+        console.log("Updated Session");
+      });
     } else {
       message.innerText = "Failed to connect ❌";
     }
@@ -61,7 +72,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const username = document.getElementById("userId").value;
     const result = await handleLogout(username);
     if (result) {
-      message.innerText = "Logged Out Successfully  ✅";
+      const ms = "Disconnected 👎";
+      message.innerText = `Status : ${ms}`;
+      chrome.storage.session.set({ lastStatus: ms });
     } else {
       message.innerText = "Failed to logout ❌";
     }
