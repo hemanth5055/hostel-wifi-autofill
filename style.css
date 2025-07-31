@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .container {
@@ -34,7 +35,8 @@ label {
   margin-bottom: 0.4rem;
 }
 
-input {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 0.6rem;
   margin-bottom: 1.2rem;
@@ -65,4 +67,12 @@ button {
 
 button:hover {
   background-color: #2563eb;
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
 }
