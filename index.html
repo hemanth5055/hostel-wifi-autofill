@@ -8,19 +8,41 @@
   </head>
   <body>
     <div class="container">
-      <h2>Save Wi-Fi Credentials</h2>
-
-      <label for="userId">User ID</label>
-      <input type="text" id="userId" placeholder="Enter your ID" />
-
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password" />
-
-      <div class="show-password">
-        <input type="checkbox" id="togglePassword" />
-        <label for="togglePassword">Show Password</label>
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-button active" data-tab="auth">
+          Login / Logout
+        </button>
+        <button class="tab-button" data-tab="wifi">Wi-Fi Credentials</button>
       </div>
-      <button id="saveBtn">Save</button>
+      <!-- Login / Logout Section -->
+      <div class="tab-content" id="auth">
+        <h2>Authentication</h2>
+        <button id="loginBtn">Login</button>
+        <button id="logoutBtn">Logout</button>
+        <div class="messagearea">
+          <p class="message" id="message"></p>
+        </div>
+      </div>
+      <!-- Wi-Fi Credentials Section -->
+      <div class="tab-content hidden" id="wifi">
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" placeholder="Enter your ID" />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+
+        <div class="show-password">
+          <input type="checkbox" id="togglePassword" />
+          <label for="togglePassword">Show Password</label>
+        </div>
+
+        <button id="saveBtn">Save</button>
+      </div>
     </div>
 
     <script src="index.js"></script>
